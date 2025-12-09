@@ -89,6 +89,7 @@
 	sudo yum install python3 -y
 
 ### Script pour creation du base de données :
+  
   cat > generate_sales.py << 'EOF'
   import csv
   import random
@@ -161,7 +162,7 @@ wc -l sales_large.csv
 hdfs dfs -mkdir -p /user/zeppelin/sales_data
 hdfs dfs -put sales_large.csv /user/zeppelin/sales_data/
 
-# 3. Vérifier l'upload
+# Vérifier l'upload
 hdfs dfs -ls /user/zeppelin/sales_data/
 hdfs dfs -cat /user/zeppelin/sales_data/sales_large.csv | head -3
 
